@@ -39,6 +39,20 @@ app.get('/', (req, res)=>{
 app.use("/admin", adminRoutes)
 app.use("/usuarios", usuarioRoutes)
 
+app.get('*', (req, res, next)=>{
+  
+  setImmediate(()=>{
+    next( new Error('Temos um problema'))
+  })
+})
+
+
+app.use((err, req, res, next)=>{
+
+  console.log(err.stack)
+  res.status(500).json({message: err.message})
+})
+
 app.listen(3000, ()=>{
 
   console.log("Server running");
