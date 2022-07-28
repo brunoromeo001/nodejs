@@ -1,0 +1,2 @@
+npm install mkdirp@1
+npm install -g express-generator@4
