@@ -1,13 +1,15 @@
 console.log("Executando module-01");
 
-module.exports.oculta = ()=>{
+oculta = ()=>{
 
   console.log("Executando função oculta");
 }
 
-module.exports.executa = ()=>{
+executa = ()=>{
   
   console.log("Executando a função oculta");
 }
 
-module.exports.welcome = `Bem-vindo ao módulo module-01.js`;
+welcome = `Bem-vindo ao módulo module-01.js`;
+
+module.exports = {executa, welcome}

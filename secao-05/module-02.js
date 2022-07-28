@@ -1,13 +1,5 @@
-console.log("Executando module-01");
+const {executa} = require("./module-01");
 
-module.exports.oculta = ()=>{
+executa()
 
-  console.log("Executando função oculta");
-}
-
-module.exports.executa = ()=>{
-  
-  console.log("Executando a função oculta");
-}
-
-module.exports.welcome = `Bem-vindo ao módulo module-01.js`;
+oculta()
