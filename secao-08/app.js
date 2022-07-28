@@ -2,8 +2,10 @@ const express = require("express")
 const app = express()
 const adminRoutes = require("./routes/admin")
 const usuarioRoutes = require("./routes/usuario")
+const cookieParse = require("cookie-parser")
 
 app.use(express.json())
+app.use(cookieParse())
 
 app.use((req, res, next)=>{
 
@@ -12,7 +14,22 @@ app.use((req, res, next)=>{
   return next()
 })
 
+app.get("/setcookie", (req, res)=>{
 
+  res.cookie('user', 'Bruno Romeo', {maxAge: 90000, httpOnly: true})
+  return res.send("Cookie gravado com sucesso")
+})
+
+app.get("/getcookie", (req, res)=>{
+
+  let user = req.cookies['user'];
+
+  if (user){
+
+    return res.send(user)
+  }
+
+})
 
 app.get('/', (req, res)=>{
   
