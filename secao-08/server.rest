@@ -1,0 +1,40 @@
+### get admin
+GET http://localhost:3000/admin
+###
+GET http://localhost:3000/admin/250
+###
+GET http://localhost:3000/usuarios
+###
+GET http://localhost:3000/usuarios/250
+###
+POST http://localhost:3000/admin
+Content-Type: application/json
+
+{
+  "login": "brunoromeo",
+  "senha": "123"
+}
+###
+PATCH http://localhost:3000/admin/:250
+Content-Type: application/json
+
+{
+  "login": "brunoromeo",
+  "senha": "123"
+}
+###
+PUT http://localhost:3000/admin/:250
+Content-Type: application/json
+
+{
+  "login": "brunoromeo",
+  "senha": "123"
+}
+###
+DELETE  http://localhost:3000/admin/:250
+Content-Type: application/json
+
+{
+  "login": "brunoromeo",
+  "senha": "123"
+}

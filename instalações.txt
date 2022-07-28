@@ -1,2 +1,6 @@
 npm install mkdirp@1
 npm install -g express-generator@4
+
+FFMpeg
+https://www.gyan.dev/ffmpeg/builds/
+https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z
