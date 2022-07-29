@@ -6,13 +6,6 @@ const path = require("path")
 
 app.use(bodyParse.urlencoded({extended:true}))
 
-app.get("/", (req, res)=>{
-
-  //res.json({message: "Bem-vindo"})
-
-  res.sendFile(__dirname+'/index.html')
-})
-
 const storage = multer.diskStorage({
   destination: (req, file, cb)=>{
     cb(null, 'uploads/')
@@ -23,6 +16,28 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({storage})
+
+app.get("/", (req, res)=>{
+
+  res.sendFile(__dirname+'/index.html')
+})
+
+app.post("/upload", upload.single('arquivo'), (req, res, next)=>{
+
+  const file = req.file
+  
+  if(!file){
+
+    const err = new Error("Selecione um arquivo")
+    err.httpStatusCode = 400
+    return next(err)
+  }
+
+  res.send(file)  
+
+})
+
+
 
 app.listen(3000, '127.0.0.1', ()=>{
 
