@@ -1,3 +1,11 @@
 ###
 GET http://localhost:3000/subscribers
 ###
+POST http://localhost:3000/subscribers
+Content-Content-Type: application/json
+
+{
+  "userName": "Bruno",
+  "userChannel": "Hcode"
+}
+###

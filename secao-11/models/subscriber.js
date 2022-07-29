@@ -2,20 +2,18 @@ const mongoose = require("mongoose")
 
 const subscriberSchema = new mongoose.Schema({
 
-  username:{
+  userName:{
     type: String,
     required: true
   },
-
-  useChannel:{
+  userChannel:{
     type: String,
     required: true
   },
-
   userDate:{
     type: Date,
     required: true,
-    default: Date.now()
+    default: Date.now
   }
 })
 
