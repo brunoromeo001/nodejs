@@ -4,6 +4,8 @@ const adminRoutes = require("./routes/admin")
 const usuarioRoutes = require("./routes/usuario")
 const cookieParse = require("cookie-parser")
 
+app.use(express.static('public'))
+
 app.use(express.json())
 app.use(cookieParse())
 
