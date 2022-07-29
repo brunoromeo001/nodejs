@@ -4,3 +4,6 @@ npm install -g express-generator@4
 FFMpeg
 https://www.gyan.dev/ffmpeg/builds/
 https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z
+
+Mongo DB
+https://www.mongodb.com/try/download/community
